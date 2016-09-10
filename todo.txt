@@ -1,0 +1,10 @@
+Todo:
+
+- Move to app.js
+- Remove jquery
+- Implement random speed and direction
+- Ball collision
+- Button for boundary
+- Options to change gravity/friction etc
+- Option to trace path
+- resize canvas adjust position/velocity
