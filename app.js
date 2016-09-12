@@ -87,7 +87,6 @@ window.onload = function() {
         block of if statements to check if the ball has hit the sides, roof or floor
         bounce it away (invert velocity) and reduce speed by elasticity factor
       */
-      if (sideCollision) {
         if (this.x + this.r > canvas.width) {
           this.x = canvas.width - this.r;
           this.vx *=  -1 * this.b;
@@ -98,15 +97,11 @@ window.onload = function() {
           this.vx *= -1 * this.b;
           this.vy *= this.b;
         }
-      }
-      if (roofCollision) {
         if (this.y - this.r < 0) {
           this.y = this.r;
           this.vy *= -1 * this.b;
           this.xy *= this.b;
         }
-      }
-      // This is bouncing off the floor so will always be on.
       if (this.y + this.r > canvas.height) {
         this.y = canvas.height - this.r;
         this.vy *= -1 * this.b;
