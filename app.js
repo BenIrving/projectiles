@@ -4,8 +4,6 @@ window.onload = function() {
     var gravity = 9.81;
     var balls = [];
     var ballCollision = false;
-    var sideCollision = true;
-    var roofCollision = true;
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
 
@@ -30,6 +28,16 @@ window.onload = function() {
     function randomSize() {
       // Generates a random ball size
       return (Math.random() * 10);
+    }
+
+    function randomColour() {
+      // Generate a random color based on HEX values
+      var letters = "0123456789ABCDEF".split("");
+      var colour = "#";
+      for(var i = 0; i < 6; i++) {
+        colour += letters[Math.round(Math.random() * 15)];
+      }
+      return colour;
     }
 
     function resize() {
@@ -61,16 +69,6 @@ window.onload = function() {
       ctx.lineWidth = r * 0.1;
       ctx.strokeStyle = "#000000";
       ctx.stroke();
-    }
-
-    function randomColour() {
-      // Generate a random color based on HEX values
-      var letters = "0123456789ABCDEF".split("");
-      var colour = "#";
-      for(var i = 0; i < 6; i++) {
-        colour += letters[Math.round(Math.random() * 15)];
-      }
-      return colour;
     }
 
     // Draws a ball on the canvas. Called each frame.
